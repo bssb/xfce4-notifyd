@@ -1248,8 +1248,8 @@ notify_notify (XfceNotifyGBus *skeleton,
     /* Don't show notification bubbles in the "Do not disturb" mode or if the
        application has been muted by the user. Exceptions are "urgent"
        notifications which do not expire. */
-    if (expire_timeout != 0)
-    {
+    /* if (expire_timeout != 0) */
+    /* { */
         if (xndaemon->do_not_disturb == TRUE ||
             application_is_muted == TRUE)
         {
@@ -1277,7 +1277,7 @@ notify_notify (XfceNotifyGBus *skeleton,
                 g_free (desktop_id);
             return TRUE;
         }
-    }
+    /* } */
 
     if(replaces_id
        && (window = g_tree_lookup(xndaemon->active_notifications,
